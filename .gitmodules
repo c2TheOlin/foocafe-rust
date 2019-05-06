@@ -1,0 +1,9 @@
+[submodule "book"]
+	path = book
+	url = https://github.com/rust-lang/book.git
+[submodule "rust-clippy"]
+	path = rust-clippy
+	url = https://github.com/rust-lang/rust-clippy.git
+[submodule "unsafe-code-guidelines"]
+	path = unsafe-code-guidelines
+	url = https://github.com/rust-lang/unsafe-code-guidelines.git
