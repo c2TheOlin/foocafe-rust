@@ -1,0 +1,8 @@
+
+
+Result type (both generic and specific)
+- Ok, Err 
+- Error is a wrapper round the error information.
+
+Result type has functions to handle errors such .expect("..")
+

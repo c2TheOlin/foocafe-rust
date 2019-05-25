@@ -1,11 +1,10 @@
 Cargo
 
-
  --> Cargo is the default build system and package mananger for Rust, just like nuget, npm
 
 Scaffolds projects -> git repo.
 
-Downloads and builds depednacies.
+Downloads and builds dependencies.
 
 --> TOML File
 
@@ -17,3 +16,19 @@ Cargo new {{project name}}
 Cargo build
 Cargo check
 Cargo run
+
+Building is smart and doest re-build dependencies on changed code.
+
+Continuing the analogy...
+
+--> Crates
+
+Two types binary Crates 
+- Binary (such as a project)
+- Library (re-usable code for sharing)
+
+Sharable crates exist on https://crates.io/
+
+--> Cargo update 
+Ensure thats only explicit package changes happen by using cargo.lock
+Only updates patch versions
