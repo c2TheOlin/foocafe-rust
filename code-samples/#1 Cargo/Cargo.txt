@@ -1,0 +1,19 @@
+Cargo
+
+
+ --> Cargo is the default build system and package mananger for Rust, just like nuget, npm
+
+Scaffolds projects -> git repo.
+
+Downloads and builds depednacies.
+
+--> TOML File
+
+Where its stored you.
+
+--> Key commands (same for all OS's)
+
+Cargo new {{project name}}
+Cargo build
+Cargo check
+Cargo run
