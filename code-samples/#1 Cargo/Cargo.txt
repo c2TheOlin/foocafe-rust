@@ -27,8 +27,14 @@ Two types binary Crates
 - Binary (such as a project)
 - Library (re-usable code for sharing)
 
+Libraries should contain docs
+carg doc --open will build a local doc folder for your project
+including docs for dependencies which is browsable. 
+
 Sharable crates exist on https://crates.io/
 
 --> Cargo update 
 Ensure thats only explicit package changes happen by using cargo.lock
 Only updates patch versions
+
+Uses document comments for adding crate information

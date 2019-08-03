@@ -1,0 +1,6 @@
+Runtime errors panic and exit immediately.
+Some are handled to prevent errors like "wrap around" behaviour will unexpected but not error.
+Some cause exits preventing unwanted memory access.
+
+C++ overflow versus Rust
+- loop with index overflow. vs panic and exit.
