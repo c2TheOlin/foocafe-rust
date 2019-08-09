@@ -1,2 +1,55 @@
 The rust compiler is probably its strongest asset.
 
+Guarantees memory safety via "Ownership"
+ - No garbage collection
+ - No manual alloc
+ - Just compile time ownership with rulesets
+
+Values have owners. 1 at a time
+Owners scope kills the value.
+
+fn main() {
+
+    let s = String::from("hello");
+    {
+        let s = String::from("it's me");
+        println!("{}", s);
+    }
+    println!("{}", s);
+}
+
+String::from("xxx") --> heap memeory
+
+C# --> Garbage collector tracks and removes unsued memory.
+C++ --> mem alloc, dealloc
+Rust --> when the scope is done -> drop
+
+Scopes - Resource Acquisition Is Initialization (RAII).
+
+Pass by ref.
+
+Double free error. (C++ it)
+{
+    let x = String::from("Colin");
+    let y = x;
+
+    println!("{}", x);
+}
+{
+    let x = String::from("Colin");
+    {
+        let y = x;
+    }
+    println!("{}", x);
+}
+
+// Compiler error
+-- Rust "Moves" shallow copy but with invalidation
+which maintains a single owner.
+
+For functions this is the same except on "copy" types like integer.
+Where is pass by value
+
+
+Whilst it can detect/prevent memory or data issues this wont protect you from
+logical errors.
