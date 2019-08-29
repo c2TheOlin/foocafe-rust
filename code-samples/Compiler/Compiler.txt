@@ -44,12 +44,49 @@ Double free error. (C++ it)
 }
 
 // Compiler error
--- Rust "Moves" shallow copy but with invalidation
-which maintains a single owner.
+-- Rust "Moves" rather than shallow copy but with invalidation
+which maintains a single owner. No deep copies unless clones.
 
 For functions this is the same except on "copy" types like integer.
-Where is pass by value
-
+Where is pass by value - this is because copies on the stack are easy.
 
 Whilst it can detect/prevent memory or data issues this wont protect you from
 logical errors.
+
+// Do a comprehensive scope demo
+
+- Stack types
+- Heap types
+
+fn main() {
+    let literalstring = "Hi";
+    let heapstring = String::from("hej");
+
+    let copyofliteralstring = literalstring;
+    // Both live
+    let copymutablestring = heapstring;
+    // "Move" heapstring is deallocated.
+
+    let attackoftheclonestring = copymutablestring.clone();
+    // ouchy expensive deep copy at runtime.
+
+    println!("{}", heapstring);
+}
+
+
+// Referencing and Dereferencing
+Cover the obvious borrowing
+ 
+ // mutable references
+restricted to one mut ref in one scope
+to prevent dataraces.
+
+Cant mix mut and immutable references to the same type.
+unless they go out of scope.
+
+C++
+
+ fn main {
+     
+ }
+
