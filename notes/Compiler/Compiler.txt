@@ -82,11 +82,9 @@ restricted to one mut ref in one scope
 to prevent dataraces.
 
 Cant mix mut and immutable references to the same type.
-unless they go out of scope.
+unless they go out of scope. But mutiple immutable is fine.
 
-C++
+No dangling references.
+//cover with code example.
 
- fn main {
-     
- }
 

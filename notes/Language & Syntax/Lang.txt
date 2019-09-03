@@ -1,0 +1,118 @@
+
+
+Variables are declared using the "let annotations" by default these are immutable.
+You can make them mutable with the "mut" annotation.
+
+Are immutable variables constants? NO - they can be assinged a value by a funaction.
+
+fn main()
+{
+    let u8: seed = 8; 
+    let myvar = fn calculate(seed) { return  seed / 2;};
+}
+
+Result type (both generic and specific)
+- Ok, Err 
+- Error is a wrapper round the error information.
+
+Result type has functions to handle errors such .expect("..")
+
+match function which us similar to a switch case in C#.
+
+All standard unsiged and signed scalar types.
+Compound types of array, tuple and vector.
+ let tup: (i32, f64, u8) = (500, 6.4, 1);
+ let (x, y, z) = tup; //destructuring pattern matching. and also indexed values e.g tup.1
+
+Arrays are fixed lengths and type specific.
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+index very much like C++ and C# a[0];
+
+Variables are declared using the "let annotations" by default these are immutable.
+You can make them mutable with the "mut" annotation.
+
+Snake case - another creature naming.
+
+Statements dont evalute to a value  - let x = y = 5; No No;
+Expression dont need a return just end without a semi colon. but can still exit early with return.
+Ifs elses are expressions let x = if blah { blah } else { no blah };
+
+loops
+while (as normal)
+loop-> break and return via value appearing after the break
+for element in a.iter() {
+
+collections can be traversed in reveser .rev().
+
+Slice
+C#
+var slice = a[i1..i2]; // { 3, 4, 5 }
+
+Rust
+let slice = &s[1..2];
+let slice = &s[..2];
+let slice = &s[3..];
+
+
+Stuct short hands ->
+
+Creating a struct if the fields and params are the same thats
+all you need to write.
+
+and if you have another object to create based on its.
+Then you can just write ..user1.
+
+pub fn create_new_user(template_user: User) -> User {
+    User {
+        name,
+        email,
+        ..template_user,
+    }
+}
+ tuple stucts for named tuples.
+
+
+ // Add debug properties to a struct 
+ and user a debug print line
+ to show nice debugging capabilitie
+
+ &self.
+
+Rust has a feature called automatic 
+referencing and dereferencing. Calling methods is one of the few places in Rust that has this behavior.
+Which differs from C/C++ and make it implicitly based on the self reciever name
+
+// Associated functions() --> Helpers ::
+
+// Functional enums
+ Little bit like structs a bit like associated methods.
+can take data , of various sizes and types!
+can have impl methods etc
+ 
+//--Options<T> Some/None opt in null.
+*** NO NULL VALUES -
+
+compiler can enforce that enums cases are handled.
+Match allows easy control flow for each case.
+Kind like a C# switch but since enums can contain valeus 
+these can be bound in the pattern
+
+but logic errors not caught
+so 
+
+fn main()
+{
+    for i in 125.. {
+        plus_one(Some(i)); // stacker overflow and panic.
+    }
+}
+
+fn plus_one(x: Option<i8>) -> Option<i8> {
+    match x {
+        None => None,
+        Some(i) => { 
+            println!("{}", i);
+            Some(i + 1)
+        },
+    }
+}
