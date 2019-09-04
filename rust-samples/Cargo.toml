@@ -1,0 +1,18 @@
+[package]
+name = "rust-samples"
+version = "0.1.0"
+authors = ["Colin <colin.ingram@bimobject.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[[example]]
+name='02-language'
+path='examples/02-language'
+
+[[example]]
+name='03-compiler'
+path='examples/03-compiler'
