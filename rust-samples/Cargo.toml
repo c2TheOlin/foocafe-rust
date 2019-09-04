@@ -10,9 +10,9 @@ edition = "2018"
 
 
 [[example]]
-name='02-language'
-path='examples/02-language'
+name='language'
+path='examples/language'
 
 [[example]]
 name='03-compiler'
-path='examples/03-compiler'
+path='examples\03-compiler'
