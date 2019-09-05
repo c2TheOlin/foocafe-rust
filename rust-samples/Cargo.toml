@@ -3,16 +3,21 @@ name = "rust-samples"
 version = "0.1.0"
 authors = ["Colin <colin.ingram@bimobject.com>"]
 edition = "2018"
+default-run = "main"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rand = "0.7.*"
 
+# Here you can set up compiled examples that end up in target/examples
+# And can be run with cargo run --examples [example name]
 
 [[example]]
-name='language'
-path='examples/language'
+name="language"
+path="examples/lang-main.rs"
 
 [[example]]
-name='03-compiler'
-path='examples\03-compiler'
+name="compiler"
+path="examples/compiler-main.rs"
+

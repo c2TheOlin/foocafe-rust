@@ -1,4 +1,4 @@
-Cargo
+git sCargo
 
  --> Cargo is the default build system and package mananger for Rust, just like nuget, npm
 
@@ -41,6 +41,7 @@ Uses document comments for adding crate information
 
 module system, and include:
 
+A package can contain multiple binary crates and optionally one library crate. 
 Packages: A Cargo feature that lets you build, test, and share crates
 Crates: A tree of modules that produces a library or executable
 Modules and use: Let you control the organization, scope, and privacy of paths

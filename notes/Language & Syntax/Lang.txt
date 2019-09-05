@@ -116,3 +116,9 @@ fn plus_one(x: Option<i8>) -> Option<i8> {
         },
     }
 }
+
+Vectors --> Equatable to List<T>
+Also scoped, contents destroyed unless references.
+
+
+Hashmaps

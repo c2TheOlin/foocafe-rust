@@ -87,4 +87,6 @@ unless they go out of scope. But mutiple immutable is fine.
 No dangling references.
 //cover with code example.
 
+Because there is an option<T> generic enum
+the compiler can enforce null handling.
 
