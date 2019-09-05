@@ -14,10 +14,21 @@ rand = "0.7.*"
 # And can be run with cargo run --examples [example name]
 
 [[example]]
-name="language"
-path="examples/lang-main.rs"
+name="basics"
+path="examples/basics.rs"
 
 [[example]]
-name="compiler"
-path="examples/compiler-main.rs"
+name="collections"
+path="examples/collections.rs"
 
+[[example]]
+name="enums"
+path="examples/enums.rs"
+
+[[example]]
+name="match"
+path="examples/match.rs"
+
+[[example]]
+name="mutability"
+path="examples/mutability.rs"
