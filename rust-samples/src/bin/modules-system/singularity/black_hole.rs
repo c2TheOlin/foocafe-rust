@@ -1,4 +1,4 @@
-use event_horizon::expand;
+use self::event_horizon::expand;
 use crate::singularity::accretion;
     
 pub fn feed() {
