@@ -4,15 +4,6 @@ fn snake_case_with_egyptian_brackets() {
     println!("blah blah parseltongue")
 }
 
-fn create_building_from_template(template: Building, name: String, valdermort_controlled: bool) -> Building {
-    Building {
-        name,
-        valdermort_controlled,
-        location: String::from("UK"),
-        ..template
-    }
-}
-
 struct Building {
     name: String,
     number: u32,
@@ -39,8 +30,16 @@ impl Building {
     }
 }
 
+fn create_building_from_template(template: Building, name: String, is_valdermort_controlled: bool) -> Building {
+    Building {
+        name,
+        valdermort_controlled: is_valdermort_controlled,
+        location: String::from("UK"),
+        ..template
+    }
+}
+
 fn main() {
-    snake_case_with_egyptian_brackets();
 
     let template = Building { 
         name: String::from("Ministry of Magic"),
