@@ -1,9 +1,11 @@
 use rand::prelude::*;
 
+// This is the common function style - snake case
 fn snake_case_with_egyptian_brackets() {
     println!("blah blah parseltongue")
 }
 
+// Not too much revolitionary here in the definition of reference types
 struct Building {
     name: String,
     number: u32,
@@ -12,8 +14,10 @@ struct Building {
     valdermort_controlled: bool
 }
 
+// you can seperate out your impl - Convention based on name
 impl Building {
 
+    // normal function
     pub fn get_name(&self) -> &String {
         &self.name
     }
@@ -30,12 +34,13 @@ impl Building {
     }
 }
 
+// auto param name mathcing on the new object
 fn create_building_from_template(template: Building, name: String, is_valdermort_controlled: bool) -> Building {
     Building {
         name,
         valdermort_controlled: is_valdermort_controlled,
         location: String::from("UK"),
-        ..template
+        ..template //auto populate based on another object
     }
 }
 
