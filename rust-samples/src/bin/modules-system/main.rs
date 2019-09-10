@@ -1,6 +1,6 @@
 mod singularity;
 
-use self::singularity::black_hole;
+use crate::singularity::black_hole;
 use std::io::{self, Write};
 use std::collections::*;
 

@@ -8,11 +8,21 @@ default-run = "main"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rand = "0.7.*"
+rand = { git = "https://github.com/rust-lang-nursery/rand" } # can add branch or revision
+libc = "0.2.*"
+serde = "^1.0.1"
+# Sub crates can be created and referenced with a path and version
+# utils = { path = "utils", version = "0.1.0" }
+
+[dependencies.log]
+version = "0.4.*"
+## features = ["env_logger"] cherry pick sub features
+
+[dev-dependencies] # test and benchmarks
+tempdir = "0.3"
 
 # Here you can set up compiled examples that end up in target/examples
 # And can be run with cargo run --examples [example name]
-
 [[example]]
 name="basics"
 path="examples/basics.rs"
@@ -32,3 +42,7 @@ path="examples/match.rs"
 [[example]]
 name="mutability"
 path="examples/mutability.rs"
+
+
+#[patch.crates-io] - (patch.[packagesource e.g git, crates.io])
+## uuid = { path = "../path/to/uuid" }
