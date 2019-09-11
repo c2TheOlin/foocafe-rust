@@ -5,7 +5,7 @@ fn snake_case_with_egyptian_brackets() {
     println!("blah blah parseltongue")
 }
 
-// Not too much revolitionary here in the definition of reference types
+// Not too much revolutionary here in the definition of reference types
 struct Building {
     name: String,
     number: u32,
@@ -63,4 +63,27 @@ fn main() {
     let a_shop = Building::generic_shop();
 
     println!("{}", a_shop.get_name());
+
+    // Pretty familiar loop/control constructs
+    let condition = true;
+    let mut counter = if condition { 0 } else { 1 };
+    
+    loop {
+        counter +=1;
+        println!("{}", hogwarts.get_name());
+
+        if(counter == 5)
+        {
+            break;
+        }
+    }
+
+    while (counter <= 10){
+           println!("Harry Potter");
+           counter += 1;
+    }
+
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
 }
