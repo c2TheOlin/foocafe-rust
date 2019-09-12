@@ -1,5 +1,5 @@
 fn main() {
-    /* 3 Main Collections/Compound Types*/
+    /* 4 Main Collections/Compound Types*/
 
     // Tuple
     let tuple: (i32, f64, &str) = (500, 6.4, "asd"); // Pack
@@ -40,4 +40,6 @@ fn main() {
     for v in &my_macro_vec {
         println!("{}", v);
     }
+
+    // Also hash maps
 }

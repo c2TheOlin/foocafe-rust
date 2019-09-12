@@ -36,8 +36,8 @@ name="enums"
 path="examples/enums.rs"
 
 [[example]]
-name="match"
-path="examples/match.rs"
+name="errors"
+path="examples/errors.rs"
 
 [[example]]
 name="mutability"
