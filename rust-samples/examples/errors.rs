@@ -1,6 +1,6 @@
 
 fn main() {
-    let result = Some(5);
+    let result = Some(5); // some method value
     let fail = None;
     let result = do_something(result);
     println!("{}", result.unwrap_or_else(|| 666));
