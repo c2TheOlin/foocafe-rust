@@ -1,13 +1,12 @@
 
 fn main() {
-
     let result = Some(5);
     let fail = None;
     let result = do_something(result);
-    println!("{}", result.unwrap());
+    println!("{}", result.unwrap_or_else(|| 666));
 
+    println!("{}", fail.unwrap_or_else(|| 666));
     do_something_bad(fail);
-    println!("{}", result.unwrap());
 }
 
 fn do_something(val: Option<i32>) ->  Option<i32> {
