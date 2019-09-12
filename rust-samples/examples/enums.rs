@@ -28,6 +28,7 @@ impl NeosChoice {
             println!("Being a regular coder is {}", _i);
         }
 
+        // This is manual and not compiler checked
         if let NeosChoice::SlapMorpheus(_i) = self {
             println!("Slap him {} times", _i);        
         }
@@ -36,10 +37,9 @@ impl NeosChoice {
             println!("Lets see how far the rabbit hole goes");    
         }   
     }
-}
 
-impl NeosChoice {
-      fn match_response(&self) {       
+    // This is exhaustive
+    fn match_response(&self) {       
         match self {
             NeosChoice::BluePill(message) =>   println!("Being a regular coder is {}", message),
             NeosChoice::SlapMorpheus(count) => println!("Slap him {} times", count),
