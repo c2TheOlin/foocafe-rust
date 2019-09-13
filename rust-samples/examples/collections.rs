@@ -13,23 +13,30 @@ fn main() {
         println!("Tuple Tuple Tuple")
     }
     
-    // Array
+    // Arrays - value type - have traits and are on stack
     let mut my_array: [u32; 6] = [5, 3, 2, 1, 1, 0];
     let another_array = [2; 2];
     let infered_array = ["Walk", "Like", "An", "Egyptian"];
-
-    my_array.reverse();
+    let slice_array: &[u32] = &my_array[..2];
+   
+    //let x = my_array[200] this panics!
 
     for val in &my_array {
         println!("Fib {}", val);
     }
+
+    for val in slice_array {
+        println!("Sliced {}", val);
+    }
+
+    my_array.reverse();
 
     let mapped = my_array.iter().map(|val| val + 1); 
     for val in mapped {
         println!("{}", val);
     }
     
-    // Vectors (essential a list)
+    // Vectors
     let mut my_vector: Vec<bool> = Vec::new();
     let my_macro_vec = vec!["Jazz", "Rock", "Classical"];
 

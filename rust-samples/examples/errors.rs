@@ -1,4 +1,5 @@
 
+// Option<T>
 fn main() {
     let result = Some(5); // some method value
     let fail = None;
@@ -8,6 +9,18 @@ fn main() {
     println!("{}", fail.unwrap_or_else(|| 666));
     do_something_bad(fail);
 }
+
+// Result
+fn main() {
+    let result = Some(5); // some method value
+    let fail = None;
+    let result = do_something(result);
+    println!("{}", result.unwrap_or_else(|| 666));
+
+    println!("{}", fail.unwrap_or_else(|| 666));
+    do_something_bad(fail);
+}
+
 
 fn do_something(val: Option<i32>) ->  Option<i32> {
   match val {
