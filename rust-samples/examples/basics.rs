@@ -2,7 +2,7 @@ use rand::prelude::*;
 
 // This is the common function style - snake case
 fn snake_case_with_egyptian_brackets() {
-    println!("blah blah parseltongue")
+    println!("blah blah parseltongue")  // https://blog.codinghorror.com/new-programming-jargon/
 }
 
 // Not too much revolutionary here in the definition of reference types
@@ -44,8 +44,28 @@ fn create_building_from_template(template: Building, name: String, is_valdermort
     }
 }
 
-fn main() {
+// Traits/Exisiting and Custom
+pub trait Defend {
+    fn cast_protection_spell(&self);
+}
 
+impl Defend for Building {
+    fn cast_protection_spell(&self) {
+        println!("Salvio Hexia");
+    }
+}
+
+// Trait Bounds
+pub fn trait_param(obj: impl Defend) {
+    obj.cast_protection_spell();
+}
+
+pub fn trait_generics<T: Defend>(obj: T, obj2: T) {
+    obj.cast_protection_spell();
+    obj2.cast_protection_spell();
+}
+
+fn main() {
     let template = Building { 
         name: String::from("Ministry of Magic"),
         number: 1, 
@@ -58,6 +78,8 @@ fn main() {
         template,
         String::from("Hogwarts"),
         false);
+
+    hogwarts.cast_protection_spell();
 
     // associated function
     let a_shop = Building::generic_shop();

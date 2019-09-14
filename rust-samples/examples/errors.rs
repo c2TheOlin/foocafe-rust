@@ -27,8 +27,6 @@ fn main()  -> Result<(), Box<dyn Error>> {
 }
 
 
-
-
 fn do_something(val: Option<i32>) ->  Option<i32> {
   match val {
       Some(i) => Some(i * i),
