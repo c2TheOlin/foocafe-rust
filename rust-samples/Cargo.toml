@@ -41,7 +41,7 @@ path="examples/errors.rs"
 
 [[example]]
 name="mutability"
-path="examples/mutability.rs"
+path="examples/mutability_scope.rs"
 
 
 #[patch.crates-io] - (patch.[packagesource e.g git, crates.io])
