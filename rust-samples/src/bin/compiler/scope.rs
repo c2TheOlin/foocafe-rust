@@ -1,7 +1,7 @@
 pub fn show_scopes() {
 
     // Move (like a shallow copy but - no posibility for double free error
-    let mut description = String::from("Hello");
+    let description = String::from("Hello");
     let my_new_description_pointer = description; // description dies here as "Moved" unless cloned
     println!("{}", my_new_description_pointer);
     //description.to_uppercase(); // --> Error
@@ -9,15 +9,16 @@ pub fn show_scopes() {
     let trimmed = borrowed_references(&my_new_description_pointer);
     println!("{} {}", trimmed, &my_new_description_pointer);
 
-    takes_ownership(my_new_description_pointer); // -> my_new_description_pointer dies
+    takes_ownership(my_new_description_pointer); // -> my_new_description_pointer within the scope dies
     //println!("{}", my_new_description_pointer);
 
     let number = 32;
     let other_number = number;
-    has_copy_trait(other_number);
-    println!("{} {}", number, &other_number);
+    let result = has_copy_trait(other_number);
+    println!("{} {} {}", &number, &other_number, &result);
     
 } // trimmed, number and other number dies here
+
 
 fn borrowed_references(text: &str) -> &str{
     &text[..4]   

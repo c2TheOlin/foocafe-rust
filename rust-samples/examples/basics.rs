@@ -6,6 +6,7 @@ fn snake_case_with_egyptian_brackets() {
 }
 
 // Not too much revolutionary here in the definition of reference types
+#[derive(Debug, PartialEq)] // deriveable traits
 struct Building {
     name: String,
     number: u32,
@@ -34,16 +35,6 @@ impl Building {
     }
 }
 
-// auto param name mathcing on the new object
-fn create_building_from_template(template: Building, name: String, is_valdermort_controlled: bool) -> Building {
-    Building {
-        name,
-        valdermort_controlled: is_valdermort_controlled,
-        location: String::from("UK"),
-        ..template //auto populate based on another object
-    }
-}
-
 // Traits/Exisiting and Custom
 pub trait Defend {
     fn cast_protection_spell(&self);
@@ -52,6 +43,16 @@ pub trait Defend {
 impl Defend for Building {
     fn cast_protection_spell(&self) {
         println!("Salvio Hexia");
+    }
+}
+
+// auto param name mathcing on the new object
+fn create_building_from_template(template: Building, name: String, is_valdermort_controlled: bool) -> Building {
+    Building {
+        name,
+        valdermort_controlled: is_valdermort_controlled,
+        location: String::from("UK"),
+        ..template //auto populate based on another object
     }
 }
 
@@ -66,6 +67,7 @@ pub fn trait_generics<T: Defend>(obj: T, obj2: T) {
 }
 
 fn main() {
+
     let template = Building { 
         name: String::from("Ministry of Magic"),
         number: 1, 
@@ -74,17 +76,23 @@ fn main() {
         valdermort_controlled: true
     };
 
+    // automapping of properties
     let hogwarts = create_building_from_template(
         template,
         String::from("Hogwarts"),
         false);
 
+    // custom trait
     hogwarts.cast_protection_spell();
 
     // associated function
     let a_shop = Building::generic_shop();
 
-    println!("{}", a_shop.get_name());
+    // Derived traits
+    println!("{:?}", a_shop);
+    if(a_shop != hogwarts) {
+        println!("Equality derived traight for the win");
+    }
 
     // Pretty familiar loop/control constructs
     let condition = true;
