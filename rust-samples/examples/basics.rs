@@ -2,7 +2,7 @@ use rand::prelude::*;
 
 // This is the common function style - snake case
 fn snake_case_with_egyptian_brackets() {
-    println!("blah blah parseltongue")  // https://blog.codinghorror.com/new-programming-jargon/
+    println!("blah blah parseltongue");  // https://blog.codinghorror.com/new-programming-jargon/
 }
 
 // Not too much revolutionary here in the definition of reference types
@@ -106,6 +106,7 @@ fn main() {
         {
             break;
         }
+
     }
 
     while (counter <= 10){

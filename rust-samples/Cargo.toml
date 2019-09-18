@@ -3,7 +3,13 @@ name = "rust-samples"
 version = "0.1.0"
 authors = ["Colin <colin.ingram@bimobject.com>"]
 edition = "2018"
-default-run = "main"
+default-run = "main" #if you have multiple binaries
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,7 +17,7 @@ default-run = "main"
 rand = { git = "https://github.com/rust-lang-nursery/rand" } # can add branch or revision
 libc = "0.2.*"
 serde = "^1.0.1"
-# Sub crates can be created and referenced with a path and version
+# Sub crates or other crates in workspace can be created and referenced with a path and version
 # utils = { path = "utils", version = "0.1.0" }
 
 [dependencies.log]
@@ -22,7 +28,7 @@ version = "0.4.*"
 tempdir = "0.3"
 
 # Here you can set up compiled examples that end up in target/examples
-# And can be run with cargo run --examples [example name]
+# And can be run with cargo build examples --> cargo run --example [example name]
 [[example]]
 name="basics"
 path="examples/basics.rs"
@@ -38,7 +44,6 @@ path="examples/enums.rs"
 [[example]]
 name="errors"
 path="examples/errors.rs"
-
 
 #[patch.crates-io] - (patch.[packagesource e.g git, crates.io])
 ## uuid = { path = "../path/to/uuid" }
