@@ -1,1 +1,2 @@
 rust-samples/target/*
+.lock
