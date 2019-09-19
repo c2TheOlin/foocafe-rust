@@ -1,19 +1,3 @@
-fn main() {
-    let myAnswer = NeosChoice::BluePill(String::from("awesooooome"));
-    myAnswer.response();
-
-    let i_know_kungfu_answer = NeosChoice::SlapMorpheus(65);
-    i_know_kungfu_answer.response();
-
-    let neosAnswer = NeosChoice::RedPill;
-    neosAnswer.response();
-
-    neosAnswer.match_response();
-
-    let not_interested = NeosChoice::SomethingElse;
-    not_interested.match_response();
-}
-
 enum NeosChoice {
     RedPill,
     BluePill(String),
@@ -48,3 +32,20 @@ impl NeosChoice {
         }        
     }
 }
+
+fn main() {
+    let myAnswer = NeosChoice::BluePill(String::from("awesooooome"));
+    myAnswer.response();
+
+    let i_know_kungfu_answer = NeosChoice::SlapMorpheus(65);
+    i_know_kungfu_answer.response();
+
+    let neosAnswer = NeosChoice::RedPill;
+    neosAnswer.response();
+
+    neosAnswer.match_response();
+
+    let not_interested = NeosChoice::SomethingElse;
+    not_interested.match_response();
+}
+

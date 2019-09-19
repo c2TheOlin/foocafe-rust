@@ -1,10 +1,5 @@
 use rand::prelude::*;
 
-// This is the common function style - snake case
-fn snake_case_with_egyptian_brackets() {
-    println!("blah blah parseltongue");  // https://blog.codinghorror.com/new-programming-jargon/
-}
-
 // Not too much revolutionary here in the definition of reference types
 #[derive(Debug, PartialEq)] // deriveable traits
 struct Building {
@@ -17,19 +12,18 @@ struct Building {
 
 // you can seperate out your impl - Convention based on name
 impl Building {
-
-    // normal function
+    // normal method
     pub fn get_name(&self) -> &String {
         &self.name
     }
 
     // associated function
-    fn generic_shop() -> Building { 
+     fn build_hogwarts() -> Building { 
             Building {
-            name: String::from("A boring magic shop"),
+            name: String::from("Howarts"),
             number: random(), 
-            owner: String::from("Some person"),
-            location: String::from("Diagon alley"),
+            owner: String::from("Dumbledor"),
+            location: String::from("UK?"),
             valdermort_controlled: false 
         }
     }
@@ -45,17 +39,6 @@ impl Defend for Building {
         println!("Salvio Hexia");
     }
 }
-
-// auto param name mathcing on the new object
-fn create_building_from_template(template: Building, name: String, is_valdermort_controlled: bool) -> Building {
-    Building {
-        name,
-        valdermort_controlled: is_valdermort_controlled,
-        location: String::from("UK"),
-        ..template //auto populate based on another object
-    }
-}
-
 // Trait Bounds
 pub fn trait_param(obj: impl Defend) {
     obj.cast_protection_spell();
@@ -68,7 +51,7 @@ pub fn trait_generics<T: Defend>(obj: T, obj2: T) {
 
 fn main() {
 
-    let template = Building { 
+    let ministry = Building { 
         name: String::from("Ministry of Magic"),
         number: 1, 
         owner: String::from("Cornelius Fudge"),
@@ -76,27 +59,18 @@ fn main() {
         valdermort_controlled: true
     };
 
-    // automapping of properties
-    let hogwarts = create_building_from_template(
-        template,
-        String::from("Hogwarts"),
-        false);
+    // associated function
+    let hogwarts = Building::build_hogwarts();
 
     // custom trait
     hogwarts.cast_protection_spell();
 
-    // associated function
-    let a_shop = Building::generic_shop();
-
     // Derived traits
-    println!("{:?}", a_shop);
-    if(a_shop != hogwarts) {
-        println!("Equality derived traight for the win");
-    }
+    println!("{:?}", hogwarts);
+    assert_ne!(hogwarts, ministry);
 
     // Pretty familiar loop/control constructs
-    let condition = true;
-    let mut counter = if condition { 0 } else { 1 };
+    let mut counter = if true { 0 } else { 1 };
     
     loop {
         counter +=1;

@@ -1,18 +1,17 @@
 mod compiler;
 use compiler::lifetime_elision::*;
-use compiler::scope::show_scopes;
 
-// Same scope for references everything is nice!
-// fn main() {
-//     let city = City::new(54);      
-//     let city2 = City::new(30);
+//Same scope for references everything is nice!
+fn main() {
+    let city = City::new(54);      
+    let city2 = City::new(30);
 
-//     let result = compare_size_with_lifetimes(&city, &city2);
+    let result = compare_size_with_lifetimes(&city, &city2);
    
-//     println!("{}", result.size_in_sqm);
-// }
+    println!("{}", result.size_in_sqm);
+}
 
-// // Calling this means that city2 is in a difference lifetime 
+// Calling this means that city2 is in a difference lifetime 
 // fn main() {
 //     let city = City::new(54);
 //     let want_to_do_something = true;
@@ -87,7 +86,3 @@ use compiler::scope::show_scopes;
 
 //     println!("{}", result.size_in_sqm);
 // }
-
-fn main() {
-    show_scopes();
-}

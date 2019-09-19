@@ -34,8 +34,8 @@ name="basics"
 path="examples/basics.rs"
 
 [[example]]
-name="collections"
-path="examples/collections.rs"
+name="patterns"
+path="examples/patterns.rs"
 
 [[example]]
 name="enums"
